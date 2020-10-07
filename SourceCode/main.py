@@ -49,3 +49,14 @@ T_SHAPE_TEMPLATE = [['.....', '..O..', '.OOO.', '.....', '.....'], ['.....', '..
     '.....', '.....', '.OOO.', '..O..', '.....'], ['.....', '..O..', '.OO..', '..O..', '.....']]
 PIECES = {'S': S_SHAPE_TEMPLATE, 'Z': Z_SHAPE_TEMPLATE, 'J': J_SHAPE_TEMPLATE,
           'L': L_SHAPE_TEMPLATE, 'I': I_SHAPE_TEMPLATE, 'O': O_SHAPE_TEMPLATE, 'T': T_SHAPE_TEMPLATE}
+def main():
+    global FPSCLOCK,DISPLAYSURF,BASICFONT,BIGFONT
+    pygame.init()
+    FPSCLOCK = pygame.time.Clock()
+    DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH,WINDOWHEIGHT))
+    BASICFONT = pygame.font.Font('freesansbold.ttf',18)
+    BIGFONT = pygame.font.Font('freesansbold.ttf',100)
+    pygame.display.set_captions('Tetromino')
+    while True:
+        runGame()
+        showTextScreen('Game Over')
