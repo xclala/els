@@ -1,7 +1,5 @@
-import random
 from time import time
-import pygame
-import sys
+from pygame import *
 from pygame.locals import *
 FPS = 25
 WINDOWWIDTH = 640
@@ -53,12 +51,12 @@ PIECES = {'S': S_SHAPE_TEMPLATE, 'Z': Z_SHAPE_TEMPLATE, 'J': J_SHAPE_TEMPLATE,
 
 def main():
     global FPSCLOCK, DISPLAYSURF, BASICFONT, BIGFONT
-    pygame.init()
-    FPSCLOCK = pygame.time.Clock()
-    DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
-    BASICFONT = pygame.font.Font('freesansbold.ttf', 18)
-    BIGFONT = pygame.font.Font('freesansbold.ttf', 100)
-    pygame.display.set_caption('Tetromino')
+    init()
+    FPSCLOCK = time.Clock()
+    DISPLAYSURF = display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
+    BASICFONT = font.Font('freesansbold.ttf', 18)
+    BIGFONT = font.Font('freesansbold.ttf', 100)
+    display.set_caption('Tetromino')
     while True:
         runGame()
         showTextScreen('Game Over')
