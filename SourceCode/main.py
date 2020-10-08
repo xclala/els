@@ -148,4 +148,11 @@ def runGame():
         else:
             fallingPiece['y'] += 1
             lastFallTime = time()
-    
+    DISPLAYSURF.fill(BGCOLOR)
+    drawBoard(board)
+    drawStatus(score, level)
+    drawNextPiece(nextPiece)
+    if fallingPiece != None:
+        drawPiece(fallingPiece)
+    pygame.display.update()
+    FPSCLOCK.tick(FPS)
