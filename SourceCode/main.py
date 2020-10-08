@@ -65,15 +65,17 @@ def main():
 
 
 def runGame():
-    board = getBlankBoard()
+    board = getBlankBoard() #not defined
     lastMoveDownTime = time()
     lastMoveSidewaysTime = time()
     lastFallTime = time()
-    movingDown, movingLeft, movingRight = False
+    movingDown = False
+    movingLeft = False
+    movingRight = False
     score = 0
-    level, fallFreq = calculateLevelAndFallFreq(score)
-    fallingPiece = getNewPiece()
-    nextPiece = getNewPiece()
+    level, fallFreq = calculateLevelAndFallFreq(score)  # not defined
+    fallingPiece = getNewPiece()#not defined
+    nextPiece = getNewPiece()  # not defined
     while True:
         if fallingPiece == None:
             fallingPiece = nextPiece
